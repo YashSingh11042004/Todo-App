@@ -1,5 +1,3 @@
-/*Just crete one html file add button and input and link with js*/
-
 let btn = document.querySelector("button");
 let inp = document.querySelector("input");
 let ul = document.querySelector("ul");
@@ -17,12 +15,12 @@ btn.addEventListener("click", function(){
 	inp.value = "";
 });
 
-   let btnDel = document.querySelectorAll(".delete");
-   for (delBtn of btnDel) {
-      delBtn.addEventListener("click", function(){
-	let parent = this.parentElement;
-	parent.remove();
-      });
-   }
+ ul.addEventListener("click", function(event){
+	if (event.target.nodeName == "BUTTON") {
+	 let listItem = event.target.parentElement;
+	 listItem.remove();
+	console.log("Deleted");
+	}
+	});
 
 
